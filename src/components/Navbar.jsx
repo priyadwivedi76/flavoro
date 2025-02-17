@@ -2,7 +2,9 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <div>
+        <h1>{new Date().toUTCString().slice(0,16)}</h1>
+    </div>
   )
 }
 
