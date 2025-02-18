@@ -4,7 +4,7 @@ import CategoryMenu from '../components/CategoryMenu'
 import FoodItems from '../components/FoodItems'
 const Home = () => {
   return (
-    <div>
+    <div className='container mx-auto'>
        <Navbar/> 
        <CategoryMenu/>
        <FoodItems/>
