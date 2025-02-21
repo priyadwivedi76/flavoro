@@ -1,14 +1,17 @@
 import React from 'react'
 import { RxCross1 } from "react-icons/rx";
+import ItemCart from './ItemCart';
 
 const Cart = () => {
   return (
     <>
     <div className='fixed right-0 top-0 w-full lg:w-[35vh] h-full bg-white'>
-      <div className='m-2 flex justify-between items-center'>
+      <div className='m-2 flex justify-between items-center mb-2'>
         <span className='text-xl font-semibold'>My Orders</span>
         <RxCross1 className='text-lg font-semibold border border-2 hover:scale-110 rounded-sm border-gray-300 cursor-pointer'/>
       </div>
+      <ItemCart/>
+      <ItemCart/>
       <div className='absolute bottom-0'>
         <h3 className='text-gray-600 font-semibold px-2 py-1'>Items:</h3>
         <h3 className='text-gray-600 font-semibold px-2 py-1'>Total Amount:</h3>
