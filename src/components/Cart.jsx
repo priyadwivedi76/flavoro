@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { FaCartArrowDown } from "react-icons/fa";
 
 const Cart = () => {
-  const [activeCart,setActiveCart]=useState(true);
+  const [activeCart,setActiveCart]=useState(false);
   const CartItems=useSelector((state)=>state.cart.cart);
   const totalQuantity=CartItems.reduce((totalQuantity,items)=>totalQuantity+items.quantity,0)
   const totalPrice=CartItems.reduce((totalPrice,items)=>totalPrice+items.quantity*items.price,0);
