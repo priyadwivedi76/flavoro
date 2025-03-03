@@ -1,15 +1,16 @@
-import React,{ useState } from 'react'
+import React,{ use, useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
 import ItemCart from './ItemCart';
 import { useSelector } from 'react-redux';
 import { FaCartArrowDown } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const [activeCart,setActiveCart]=useState(false);
   const CartItems=useSelector((state)=>state.cart.cart);
   const totalQuantity=CartItems.reduce((totalQuantity,items)=>totalQuantity+items.quantity,0)
   const totalPrice=CartItems.reduce((totalPrice,items)=>totalPrice+items.quantity*items.price,0);
-  console.log(CartItems);
+  const navigate=useNavigate();
 
   return (
     <>
@@ -25,7 +26,7 @@ const Cart = () => {
         <h3 className='text-gray-600 font-semibold px-2 py-1'>Items:{totalQuantity}</h3>
         <h3 className='text-gray-600 font-semibold px-2 py-1'>Total Amount:{totalPrice}</h3>
         <hr className='w-[90vw] lg:w-[18vw]'/>
-        <button className='px-2 py-1 bg-green-500 rounded-lg hover:bg-green-600 text-white mb-5 w-[90vw] lg:w-[17vw]'>CheckOut</button>
+        <button onClick={()=>navigate("/success")} className='px-2 py-1 bg-green-500 rounded-lg hover:bg-green-600 text-white mb-5 w-[90vw] lg:w-[17vw]'>CheckOut</button>
       </div>
     </div>
 
